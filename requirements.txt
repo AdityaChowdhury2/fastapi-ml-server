@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pydantic-settings
+python-dotenv
+transformers
+torch
+
+# for youtube transcript api
+youtube-transcript-api
