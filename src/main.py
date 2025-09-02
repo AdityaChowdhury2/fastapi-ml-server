@@ -17,3 +17,11 @@ app = FastAPI(**app_configs)
 app.include_router(health.router)
 app.include_router(text_summarize.router)
 app.include_router(youtube_script_summarize.router)
+
+
+if __name__ == "__main__":
+    import os
+    import uvicorn
+
+    port = int(os.getenv("PORT", "8000"))
+    uvicorn.run("src.main:app", host="0.0.0.0", port=port, reload=True)
