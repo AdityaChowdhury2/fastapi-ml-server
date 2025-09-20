@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from src.config import settings
-from src.api import health, text_summarize, youtube_script_summarize
+from src.api import health, text_summarize, youtube_script_summarize, translation
 
 # Determine if docs should be shown
 SHOW_DOCS_ENVIRONMENT = ("local", "staging")
@@ -17,6 +17,7 @@ app = FastAPI(**app_configs)
 app.include_router(health.router)
 app.include_router(text_summarize.router)
 app.include_router(youtube_script_summarize.router)
+app.include_router(translation.router)
 
 
 if __name__ == "__main__":
