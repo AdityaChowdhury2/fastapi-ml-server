@@ -186,9 +186,7 @@ def summarize_youtube_script(url: str, lang: str = "en", translate_to: Optional[
         print("--------------------------------")
         print(text_transcript)
         summary_text = summarize_long(text_transcript)
-        if include_transcript:
-            return summary_text, text_transcript
-        return summary_text
+        return f"{summary_text}\n\nTranscript:\n{text_transcript}" if include_transcript else summary_text
         # return text_transcript
     except TranscriptsDisabled:
         return "Error: Transcripts are disabled for this video.", ""
